@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人作品集 | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Portfolio</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#timeline" class="nav-link">Timeline</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="text-gradient">你好，我是</span>
+                        <span class="hero-name">Wendy</span>
+                    </h1>
+                    <p class="hero-subtitle">产品经理 & 全栈开发工程师</p>
+                    <p class="hero-description">
+                        佐治亚理工学院电子与计算机工程硕士在读，专注于产品设计与技术实现。
+                        拥有丰富的产品开发和系统架构经验，致力于用技术创造有价值的产品体验。
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">查看作品</a>
+                        <a href="#contact" class="btn btn-secondary">联系我</a>
+                    </div>
+                </div>
+                <!-- <div class="hero-image">
+                    <div class="hero-avatar">
+                        <img src="https://via.placeholder.com/300x300" alt="Avatar">
+                    </div>
+                </div> -->
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">关于我</h2>
+                <p class="section-subtitle">了解我的技能和背景</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">
+                        我是一名专注于产品与技术融合的工程师，目前在佐治亚理工学院攻读电子与计算机工程硕士学位。
+                        拥有2年+企业级系统开发经验，专注于产品设计、前后端开发和系统架构。
+                        擅长将用户需求转化为技术解决方案，致力于创造有意义的产品体验。
+                    </p>
+                    <div class="skills">
+                        <h3>技能栈</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-vuejs"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>前端开发</h4>
+                                    <p>HTML/CSS/JS, Vue.js</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-java"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>后端开发</h4>
+                                    <p>Java, 系统架构</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-drafting-compass"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>产品设计</h4>
+                                    <p>Figma, 墨刀, PRD</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>数据分析</h4>
+                                    <p>Python, Excel</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>AI工具</h4>
+                                    <p>Cursor, AI辅助开发</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-language"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>英语</h4>
+                                    <p>托福90+</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">我的历程</h2>
+                <p class="section-subtitle">学习经历 · 工作经历 · 项目经历</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025.06-2025.07</div>
+                        <h3>开发工程师（实习）</h3>
+                        <h4>广州仁侣科技有限公司</h4>
+                        <p>主导Bene智能机器人iOS端表情系统的产品设计与技术实现，基于SwiftUI与SceneKit开发3D表情渲染引擎，设计ExpressionSkill技能框架</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024-2026</div>
+                        <h3>电子与计算机工程硕士</h3>
+                        <h4>佐治亚理工学院</h4>
+                        <p>GPA：3.35，专注于产品设计与技术实现的跨学科学习</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021.08-2023.09</div>
+                        <h3>开发工程师（全职）</h3>
+                        <h4>北京航天光华电子技术有限公司</h4>
+                        <p>负责MES系统模块开发，参与企业网络升级与信息系统建设</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2017-2021</div>
+                        <h3>软件工程学士</h3>
+                        <h4>太原理工大学</h4>
+                        <p>GPA：3.35，主修软件工程，奠定了扎实的技术基础</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">我的作品</h2>
+                <p class="section-subtitle">精选项目展示</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <!-- <img src="https://via.placeholder.com/400x250?text=LIFEE+App" alt="LIFEE项目"> -->
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <!-- <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">LIFEE 综合性纪念与遗产平台</h3>
+                        <p class="project-description">为有人生终章规划的用户提供数字遗产管理、个性化纪念仪式规划及情感支持社区的综合平台。</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">原型设计</span>
+                            <span class="tech-tag">产品规划</span>
+                            <span class="tech-tag">用户研究</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-date">2025.02-2025.04</span>
+                            <span class="project-type">移动应用</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="projects/project1.html" class="btn btn-primary">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <!-- <img src="https://via.placeholder.com/400x250?text=不鸽+App" alt="不鸽项目"> -->
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <!-- <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">不鸽 专注与自律提升应用</h3>
+                        <p class="project-description">针对中小学生的专注力分散问题，独立开发的专注提升App，通过创新方案提升用户专注力。</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">PRD</span>
+                            <span class="tech-tag">用户调研</span>
+                            <span class="tech-tag">flutter</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-date">2024.03-2024.05</span>
+                            <span class="project-type">移动应用</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="projects/project2.html" class="btn btn-primary">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <!-- <img src="https://via.placeholder.com/400x250?text=Bene+机器人" alt="Bene智能机器人项目"> -->
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <!-- <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Bene智能机器人表情系统</h3>
+                        <p class="project-description">主导iOS端3D表情渲染引擎开发，基于SwiftUI与SceneKit实现机器人面部表情的动态驱动与实时切换。</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SwiftUI</span>
+                            <span class="tech-tag">SceneKit</span>
+                            <span class="tech-tag">iOS</span>
+                            <span class="tech-tag">3D渲染</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-date">2025.06-2025.07</span>
+                            <span class="project-type">智能硬件</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="projects/project3.html" class="btn btn-primary">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">联系我</h2>
+            </div>
+            <div class="contact-content" style="display: flex; justify-content: center; align-items: center;">
+                <div class="contact-info" style="text-align: center;">
+                    <div class="contact-item" style="margin-bottom: 2rem;">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>邮箱</h3>
+                            <p>wjiang320@gatech.edu</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 个人作品集</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

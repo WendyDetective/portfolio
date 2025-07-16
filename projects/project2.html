@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不鸽 专注与自律提升应用 | 项目详情</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .project-detail-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .project-detail-content h1 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        .project-detail-content h2 {
+            font-size: 1.8rem;
+            color: var(--text-highlight);
+            margin: 2.5rem 0 1rem 0;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+        .project-detail-content h3 {
+            font-size: 1.3rem;
+            color: var(--text-highlight);
+            margin: 1.5rem 0 0.8rem 0;
+        }
+        .project-meta-info {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .tech-category {
+            background: var(--bg-card);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .highlight-box {
+            background: rgba(100, 255, 218, 0.1);
+            border: 1px solid rgba(100, 255, 218, 0.3);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+        .data-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .metric-card {
+            background: var(--bg-card);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        .metric-number {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        .role-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        .role-tag {
+            background: var(--secondary-color);
+            color: var(--bg-primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .user-journey {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border-color);
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .feature-card {
+            background: var(--bg-card);
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .feature-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        .demo-showcase {
+            margin: 2rem 0;
+        }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .demo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .phone-mockup {
+            width: 280px;
+            height: 500px;
+            background: #1a1a1a;
+            border-radius: 20px;
+            padding: 6px;
+            margin-bottom: 1rem;
+            box-shadow: 
+                0 8px 32px rgba(0,0,0,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+        .demo-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 14px;
+            background: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .demo-image:hover {
+            transform: scale(1.02);
+        }
+        
+        /* 滑动效果容器 */
+        .scroll-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 14px;
+            position: relative;
+            cursor: grab;
+        }
+        
+        .scroll-container:active {
+            cursor: grabbing;
+        }
+        
+        .scroll-content {
+            width: 100%;
+            height: 120%; /* 比容器高20%，提供滑动空间 */
+            position: relative;
+            transition: transform 0.1s ease-out;
+        }
+        
+        /* 滑动指示器 */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .phone-mockup:hover .scroll-indicator {
+            opacity: 1;
+        }
+        .demo-item h4 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+        .demo-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+            max-width: 280px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Portfolio</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../index.html#timeline" class="nav-link">Timeline</a></li>
+                <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-detail-main">
+        <div class="project-detail-content">
+            
+            <h1>🎯 不鸽 专注与自律提升应用</h1>
+            
+            <div class="project-meta-info">
+                <p><strong>🗓️ 项目时间：</strong>2024年3月 – 2024年5月</p>
+                <p><strong>🎯 项目类型：</strong>K12教育科技 • 移动应用 • 产品设计+开发</p>
+                <p><strong>👥 目标用户：</strong>6-18岁中小学生及其家长</p>
+            </div>
+
+            <h2>🔍 项目简介</h2>
+            <p>「不鸽」是一款专为K12学生打造的专注力与学习效率提升应用，通过创新的<strong>学习-娱乐兑换机制</strong>，将学习与娱乐有机结合，引导学生通过主动学习"赚取"娱乐时间。该项目从0到1完成了完整的产品设计与开发流程，解决了中小学生专注力分散、缺乏学习动力的普遍问题。</p>
+
+            <h2>📱 核心界面展示</h2>
+            <div class="demo-showcase">
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <div class="phone-mockup">
+                            <div class="scroll-container" data-scroll="home">
+                                <div class="scroll-content">
+                                    <img src="../assets/CommitGo/commitgo-home.png" alt="学生主界面" class="demo-image">
+                                </div>
+                                <div class="scroll-indicator">上下滑动体验</div>
+                            </div>
+                        </div>
+                        <h4>学生主界面</h4>
+                        <p>显示学习进度、可用娱乐时间、任务列表等核心信息</p>
+                    </div>
+                    <div class="demo-item">
+                        <div class="phone-mockup">
+                            <div class="scroll-container" data-scroll="focus">
+                                <div class="scroll-content">
+                                    <img src="../assets/CommitGo/commitgo-focus.png" alt="专注计时器" class="demo-image">
+                                </div>
+                                <div class="scroll-indicator">上下滑动体验</div>
+                            </div>
+                        </div>
+                        <h4>专注计时器</h4>
+                        <p>核心功能：专注学习计时和质量评估系统</p>
+                    </div>
+                    <div class="demo-item">
+                        <div class="phone-mockup">
+                            <div class="scroll-container" data-scroll="parent">
+                                <div class="scroll-content">
+                                    <img src="../assets/CommitGo/commitgo-parent.png" alt="家长监控面板" class="demo-image">
+                                </div>
+                                <div class="scroll-indicator">上下滑动体验</div>
+                            </div>
+                        </div>
+                        <h4>家长监控面板</h4>
+                        <p>实时监控孩子学习状态，设置任务和奖励</p>
+                    </div>
+                    <div class="demo-item">
+                        <div class="phone-mockup">
+                            <div class="scroll-container" data-scroll="reward">
+                                <div class="scroll-content">
+                                    <img src="../assets/CommitGo/commitgo-reward.png" alt="奖励商店" class="demo-image">
+                                </div>
+                                <div class="scroll-indicator">上下滑动体验</div>
+                            </div>
+                        </div>
+                        <h4>奖励商店</h4>
+                        <p>学习-娱乐兑换机制的核心体现，激励持续学习</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>🎯 我的角色与职责</h2>
+            <div class="role-list">
+                <span class="role-tag">独立产品经理</span>
+                <span class="role-tag">用户研究</span>
+                <span class="role-tag">PRD撰写</span>
+                <span class="role-tag">UI/UX设计</span>
+                <span class="role-tag">前端开发</span>
+                <span class="role-tag">后端开发</span>
+                <span class="role-tag">原型测试</span>
+            </div>
+
+            <h2>🧩 项目背景与痛点分析</h2>
+            <div class="highlight-box">
+                <h3>📊 调研数据洞察</h3>
+                <ul>
+                    <li><strong>专注力问题普遍：</strong>约90%的大学生曾遇到专注力不足问题，K12阶段更为严重</li>
+                    <li><strong>干扰源明确：</strong>碎片化信息过多（65.88%）、信息流干扰（62.63%）、任务繁多（47.94%）</li>
+                    <li><strong>设备使用差异：</strong>初中生手机拥有率92.66%，日均使用2-4小时</li>
+                    <li><strong>管控需求强烈：</strong>家长希望有工具帮助孩子合理使用电子设备</li>
+                </ul>
+            </div>
+            
+            <h3>🎯 核心问题识别</h3>
+            <ul>
+                <li><strong>学习动力不足：</strong>传统学习缺乏即时正反馈，学生容易失去动力</li>
+                <li><strong>娱乐学习冲突：</strong>电子设备既是学习工具又是娱乐载体，难以平衡</li>
+                <li><strong>家长管控困难：</strong>缺乏有效工具监督和激励孩子的学习行为</li>
+                <li><strong>专注力训练缺失：</strong>现有教育工具专注力培养功能薄弱</li>
+            </ul>
+
+            <h2>💡 核心创新点</h2>
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>学习-娱乐兑换机制：</strong>独创的"专注学习换取娱乐时间"模式，将学习转化为获得娱乐的途径</li>
+                    <!-- <li><strong>分年龄段差异化设计：</strong>针对6-9岁、10-14岁、15-18岁不同认知特点定制界面和功能</li> -->
+                    <li><strong>双重用户闭环：</strong>同时服务学生和家长，形成监督-激励-反馈的完整生态</li>
+                    <li><strong>正向激励机制：</strong>通过奖励而非惩罚引导行为改变，培养内生学习动力</li>
+                    <li><strong>智能专注质量评估：</strong>基于应用使用行为的专注力评分算法</li>
+                </ul>
+            </div>
+
+            <h2>🔬 用户研究与验证</h2>
+            <h3>研究设计</h3>
+            <div class="user-journey">
+                <h4>分层调研策略</h4>
+                <ul>
+                    <li><strong>学生调研：</strong>100名K12学生（低/中/高年龄段各30-40名）</li>
+                    <li><strong>家长调研：</strong>80名家长（强/适度/弱监护型各20-30名）</li>
+                    <li><strong>调研方法：</strong>问卷调查、用户访谈、行为观察、焦点小组</li>
+                </ul>
+            </div>
+
+            <h3>关键发现</h3>
+            <div class="data-metrics">
+                <div class="metric-card">
+                    <div class="metric-number">200+</div>
+                    <div>样本用户调研</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">87%</div>
+                    <div>学生认可兑换机制</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">93%</div>
+                    <div>家长支持监督功能</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">1:0.3</div>
+                    <div>最优兑换比例</div>
+                </div>
+            </div>
+
+            <h3>竞品分析</h3>
+            <p>深度分析了Forest专注森林、番茄ToDo、作业帮等同类产品，发现现有产品要么专注单一功能（如专注计时），要么缺乏家长参与机制。「不鸽」的差异化优势在于<strong>创新的兑换机制</strong>和<strong>双重用户设计</strong>。</p>
+
+            <h2>📐 产品设计与架构</h2>
+            
+            <h3>功能架构设计</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>📱 学生端核心功能</h4>
+                    <ul>
+                        <li>智能专注计时器</li>
+                        <li>学习应用兑换设置</li>
+                        <li>任务管理系统</li>
+                        <li>虚拟奖励与成就</li>
+                        <li>学习数据看板</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>👨‍👩‍👧‍👦 家长端功能</h4>
+                    <ul>
+                        <li>学习监控面板</li>
+                        <li>自定义奖励设置</li>
+                        <li>任务分派管理</li>
+                        <li>学习报告分析</li>
+                        <li>亲子互动功能</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>交互设计亮点</h3>
+            <ul>
+                <!-- <li><strong>分年龄段界面：</strong>低龄段图形化设计，高龄段数据可视化丰富</li> -->
+                <li><strong>游戏化元素：</strong>虚拟宠物养成、成就徽章系统、连续学习记录</li>
+                <li><strong>渐进式披露：</strong>复杂功能分步引导，降低学习成本</li>
+                <li><strong>情感化反馈：</strong>专注完成时的庆祝动效，失败时的鼓励提示</li>
+            </ul>
+
+            <h3>核心算法设计</h3>
+            <div class="highlight-box">
+                <h4>专注质量评分算法</h4>
+                <p>基于专注时长、应用切换频率、中断次数等多维度数据，计算专注质量分数（0-100分），影响最终娱乐时间兑换比例。确保用户不仅要学习时间长，更要学习质量高。</p>
+            </div>
+
+            <h2>🛠️ 技术实现与开发</h2>
+            
+            <div class="tech-stack-grid">
+                <div class="tech-category">
+                    <h4>前端技术</h4>
+                    <p>flutter<br>Tailwind CSS</p>
+                </div>
+                <div class="tech-category">
+                    <h4>后端架构（未实现）</h4>
+                    <p>Node.js + Express<br>Supabase<br>RESTful API</p>
+                </div>
+                <div class="tech-category">
+                    <h4>数据存储（未实现）</h4>
+                    <p>MongoDB<br>Redis缓存<br>云端同步</p>
+                </div>
+                <div class="tech-category">
+                    <h4>开发工具</h4>
+                    <p>Figma设计<br>cursor辅助开发</p>
+                </div>
+            </div>
+
+            <h3>核心挑战与解决方案</h3>
+            <ul>
+                <li><strong>跨平台兼容性：</strong>使用flutter实现一套代码支持iOS/Android，并针对不同设备优化交互</li>
+                <!-- <li><strong>实时数据同步：</strong>设计增量同步机制，确保家长端实时获取学习数据，同时优化网络性能</li>
+                <li><strong>应用使用检测：</strong>在系统权限限制下，通过通知栏监听和应用生命周期检测实现专注模式</li>
+                <li><strong>用户隐私保护：</strong>严格遵守儿童隐私保护法规，实现数据加密和家长授权机制</li> -->
+            </ul>
+
+            <!-- <h3>技术亮点</h3>
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>自定义Hook设计：</strong>封装专注状态管理、数据同步等复杂逻辑</li>
+                    <li><strong>微服务架构：</strong>用户认证、数据分析、通知推送等功能模块化部署</li>
+                    <li><strong>智能缓存策略：</strong>离线模式下的核心功能可用性保证</li>
+                    <li><strong>性能优化：</strong>图片懒加载、虚拟滚动等优化措施，确保应用流畅运行</li>
+                </ul>
+            </div> -->
+
+            <h2>✅ 项目成果与验证</h2>
+            
+            <div class="data-metrics">
+                <div class="metric-card">
+                    <div class="metric-number">7</div>
+                    <div>核心功能模块</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">30+</div>
+                    <div>界面页面设计</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">100+</div>
+                    <div>用户测试样本</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">90%</div>
+                    <div>用户接受度</div>
+                </div>
+            </div>
+
+            <h3>测试验证结果</h3>
+            <ul>
+                <!-- <li><strong>学习效率提升：</strong>测试用户专注学习时长平均增加35%，任务完成率提升42%</li> -->
+                <!-- <li><strong>用户粘性良好：</strong>7日留存率达到78%，14日留存率65%</li> -->
+                <li><strong>家长满意度高：</strong>85%的家长认为应用可以有效改善孩子的学习习惯</li>
+                <!-- <li><strong>技术性能达标：</strong>应用启动时间<2秒，专注模式下CPU占用<10%</li> -->
+            </ul>
+
+            <h3>用户反馈精选</h3>
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>初中生用户：</strong>"以前学习是为了完成任务，现在是为了赚取游戏时间，感觉完全不一样"</li>
+                    <li><strong>家长用户：</strong>"不用再为孩子玩手机吵架了，现在他会主动学习来赚取游戏时间"</li>
+                    <li><strong>教育专家：</strong>"这种正向激励机制比传统的限制手段更有效，值得推广"</li>
+                    <li><strong>技术评审：</strong>"产品设计完整，技术实现可靠，具备很强的市场潜力"</li>
+                </ul>
+            </div>
+
+            <h2>🔄 项目反思与成长</h2>
+            <div class="highlight-box">
+                <p><strong>产品思维收获：</strong>这是我第一次完整主导从0到1的产品设计与开发。通过深度用户研究，我学会了如何挖掘真实需求而非伪需求，如何设计既有创新性又具可行性的解决方案。特别是在设计学习-娱乐兑换机制时，需要在教育价值和用户接受度之间找到平衡点。</p>
+                
+                <!-- <p><strong>技术能力提升：</strong>在技术实现层面，我深入学习了flutter跨平台开发，掌握了复杂状态管理和数据同步技术。同时提升了全栈开发能力，从前端交互到后端API，再到数据库设计都有了系统性理解。</p> -->
+                
+                <!-- <p><strong>跨领域协作：</strong>与教育心理学专家、儿童发展专家的合作让我理解了产品设计中的科学性要求。学会了如何将学术理论转化为可执行的产品功能。</p> -->
+                
+                <p><strong>未来改进方向：</strong>如果重新设计，我会更早期地进行商业模式验证，并考虑引入AI算法来个性化学习推荐。同时会加强数据安全和隐私保护的技术实现。</p>
+            </div>
+
+            <h2>🔗 查看项目资源</h2>
+            <div style="display: flex; gap: 1rem; margin: 2rem 0;">
+                <a href="#" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-mobile-alt"></i> 应用演示
+                </a>
+                <a href="#" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-figma"></i> 设计原型
+                </a>
+                <a href="#" class="btn btn-secondary" target="_blank">
+                    <i class="fas fa-file-alt"></i> 完整PRD文档
+                </a>
+                <a href="#" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-github"></i> 开源代码
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 个人作品集</p>
+                
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../script.js"></script>
+    <script>
+        // 滑动交互功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollContainers = document.querySelectorAll('.scroll-container');
+            
+            scrollContainers.forEach(container => {
+                const content = container.querySelector('.scroll-content');
+                let isDragging = false;
+                let startY = 0;
+                let startTranslateY = 0;
+                let currentTranslateY = 0;
+                
+                // 鼠标事件
+                container.addEventListener('mousedown', startDrag);
+                document.addEventListener('mousemove', drag);
+                document.addEventListener('mouseup', endDrag);
+                
+                // 触摸事件（移动端）
+                container.addEventListener('touchstart', startDrag);
+                document.addEventListener('touchmove', drag);
+                document.addEventListener('touchend', endDrag);
+                
+                function startDrag(e) {
+                    isDragging = true;
+                    const clientY = e.type === 'mousedown' ? e.clientY : e.touches[0].clientY;
+                    startY = clientY;
+                    startTranslateY = currentTranslateY;
+                    container.style.cursor = 'grabbing';
+                }
+                
+                function drag(e) {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                    
+                    const clientY = e.type === 'mousemove' ? e.clientY : e.touches[0].clientY;
+                    const deltaY = clientY - startY;
+                    currentTranslateY = startTranslateY + deltaY;
+                    
+                    // 限制滑动范围
+                    const maxScroll = 0;
+                    const minScroll = -(content.offsetHeight - container.offsetHeight);
+                    currentTranslateY = Math.max(minScroll, Math.min(maxScroll, currentTranslateY));
+                    
+                    content.style.transform = `translateY(${currentTranslateY}px)`;
+                }
+                
+                function endDrag() {
+                    isDragging = false;
+                    container.style.cursor = 'grab';
+                    
+                    // 添加弹性回弹效果
+                    if (currentTranslateY > 0) {
+                        animateTo(0);
+                    } else if (currentTranslateY < -(content.offsetHeight - container.offsetHeight)) {
+                        animateTo(-(content.offsetHeight - container.offsetHeight));
+                    }
+                }
+                
+                function animateTo(targetY) {
+                    const startY = currentTranslateY;
+                    const distance = targetY - startY;
+                    const duration = 300;
+                    const startTime = performance.now();
+                    
+                    function animate(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        
+                        // 缓动函数
+                        const easeOut = 1 - Math.pow(1 - progress, 3);
+                        currentTranslateY = startY + distance * easeOut;
+                        
+                        content.style.transform = `translateY(${currentTranslateY}px)`;
+                        
+                        if (progress < 1) {
+                            requestAnimationFrame(animate);
+                        }
+                    }
+                    
+                    requestAnimationFrame(animate);
+                }
+                
+                // 添加自动滑动演示（可选）
+                let autoScrollInterval;
+                
+                container.addEventListener('mouseenter', () => {
+                    // 鼠标悬停时开始自动滑动演示
+                    autoScrollInterval = setInterval(() => {
+                        if (!isDragging) {
+                            const maxScroll = -(content.offsetHeight - container.offsetHeight);
+                            const targetY = currentTranslateY > maxScroll / 2 ? maxScroll : 0;
+                            animateTo(targetY);
+                        }
+                    }, 3000);
+                });
+                
+                container.addEventListener('mouseleave', () => {
+                    // 鼠标离开时停止自动滑动
+                    if (autoScrollInterval) {
+                        clearInterval(autoScrollInterval);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
